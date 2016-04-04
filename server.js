@@ -71,7 +71,7 @@ materialName.save(function(err) {
 });
 
 Materials.find({
-	id: "101"
+	material_original_name: "Calacatta Borghini"
 }).
 limit(1).
 exec(function(err, material) {
