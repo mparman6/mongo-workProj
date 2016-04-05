@@ -14,6 +14,7 @@ app.listen(PORT, function() {
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 
+// schema for database, although not required
 var Schema = mongoose.Schema;
 
 var materialSchema = Schema({
@@ -46,6 +47,8 @@ var materialSchema = Schema({
 
 var Materials = mongoose.model('Materials', materialSchema);
 
+
+// setting up array for bulk insert
 var allMaterials = [
   {
     "id": "101",
@@ -11501,6 +11504,8 @@ var allMaterials = [
   }
 ];
 
+//insert all materials data in db
+
 Materials.collection.insert(allMaterials, onInsert);
 
 function onInsert(err, docs) {
@@ -11512,6 +11517,18 @@ function onInsert(err, docs) {
 }
 
 
+// retrieve docs from db
+Materials.find({
+	material_original_name: "Calacatta Borghini"
+}).
+limit(5).
+exec(function(err, material) {
+	if (err) {
+		console.log(err)
+	} else {
+		console.log(material);
+	}
+});
 
 
 
@@ -11520,7 +11537,8 @@ function onInsert(err, docs) {
 
 
 
-// var materialName = new Materials({
+// Save single material documents into database
+// var newMaterial = new Materials({
 // 	id: "101",
 //     material_category_id: "36",
 //     material_name: "Calacatta Borghini",
@@ -11536,7 +11554,7 @@ function onInsert(err, docs) {
 // })
 
 
-// materialName.save(function(err) {
+// newMaterial.save(function(err) {
 // 	if (err) {
 // 		console.log(err);
 // 	} else {
@@ -11544,19 +11562,6 @@ function onInsert(err, docs) {
 // 	}
 // });
 
-
-// retrieve doc from db
-Materials.find({
-	material_original_name: "Calacatta Borghini"
-}).
-limit(5).
-exec(function(err, material) {
-	if (err) {
-		console.log(err)
-	} else {
-		console.log(material);
-	}
-});
 
 
 
