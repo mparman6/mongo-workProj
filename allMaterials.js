@@ -11517,5 +11517,21 @@ function insertAll(err, docs) {
 }
 
 
+Materials.collection.createIndex({"material_name": "text"});
+
+
+
+// function searchForMaterial(materialName) {
+// Materials.collection.find({ "material_name": {$in: materialName }});
+    
+// }
+
+// searchForMaterial("Crema Brazil");
+
+
+
+
+
+
 
 
