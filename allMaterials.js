@@ -12,7 +12,7 @@ app.listen(PORT, function() {
 
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://mattp:password@ds061355.mlab.com:61355/gmtestdb');
 
 // schema for database
 var Schema = mongoose.Schema;
