@@ -12,7 +12,7 @@ app.listen(PORT, function() {
 
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://mattp:password@ds061355.mlab.com:61355/gmtestdb');
 
 // schema for database
 var Schema = mongoose.Schema;
@@ -11515,6 +11515,22 @@ function insertAll(err, docs) {
 		console.log('All materials were stored in DB');
 	}
 }
+
+
+Materials.collection.createIndex({"material_name": "text"});
+
+
+
+// function searchForMaterial(materialName) {
+// Materials.collection.find({ "material_name": {$in: materialName }});
+    
+// }
+
+// searchForMaterial("Crema Brazil");
+
+
+
+
 
 
 
