@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html ng-app="marbleApp">
+  <html>
     <head>
       <title>Marble.com AngularMongo</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,7 +13,7 @@
       
     </head>
 
-    <body>
+    <body ng-app="marbleApp">
 
       <nav style="background-color: #d56324!important">
         <div class="nav-wrapper">
@@ -39,14 +39,15 @@
           </div>
         </nav>
       </div>
+      <br>
 
 
 
-    <div class="container">
+    <div class="container" ng-controller='repeatCtrl'>
      <div class="row">  
       
 
-        <div class="col m3" ng-controller='repeatCtrl'>
+        <div class="col m3" >
           <a href="/cosmicblack"><div class="card">
             <div class="card-image small">
                 <img src="http://marble.com/uploads/materials/499/300X300/thumbnail/Cosmic-Black_APeruB9I056YsF3mZ0sT.jpg">

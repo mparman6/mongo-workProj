@@ -8,7 +8,16 @@ app.controller('repeatCtrl', function($scope) {
 
 
 
-app.controller('searchController', function($scope) {
+app.controller('searchController', function($scope, $http) {
+	$http.get('mongodb://localhost/test').
+	success(function(data) {
+		$scope.materials = data;
+	}).
+	error(function(data, status, headers, config) {
+		consol.log(status);
+	});
+
+
 	$scope.search = function (query){
 		db.collection('materials').find({"material_name": query}).toArray(function(err, results) {
 		console.log(results);
