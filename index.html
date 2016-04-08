@@ -1,85 +1,75 @@
 <!DOCTYPE html>
-  <html>
+  <html ng-app="marbleApp">
     <head>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"  media="screen,projection"/>
-      
-
-      <!--Let browser know website is optimized for mobile-->
+      <title>Marble.com AngularMongo</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <!--Import materialize.css-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="style.css"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
+      <script src="script.js"></script>
+      <script src="app.js"></script>  
+      
     </head>
 
     <body>
 
       <nav style="background-color: #d56324!important">
         <div class="nav-wrapper">
-          <form action="/cosmicblack" method="GET">
+          <form action="{{ search }}" method="GET">
             <div class="input-field">
-              <input id="search" type="search" required placeholder="Search">
+              <input id="search" type="search" required placeholder="Search" ng-model="search">
               <label for="search"><i class="material-icons">search</i></label>
               <i class="material-icons">close</i>
             </div>
           </form>
         </div>
       </nav>
-      <br>
+      
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper" id="gray">
+            <a href="/" class="brand-logo">Marble.com</a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="/granite">Granite</a></li>
+              <li><a href="/marble">Marble</a></li>
+              <li><a href="/quartzite">Quartzite</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
 
 
-      <div class="container">
-       <div class="row">
-        <div class="col m3">
-          <a href="/aspenwhite"><div class="card">
-            <div class="card-image small">
-                <img src="http://marble.com/uploads/materials/68/300X300/thumbnail/Aspen-White_RIKXCOOHk7PvydMw4olZ.jpg">
-                <span class="card-title">Aspen White</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col m3">
+
+    <div class="container">
+     <div class="row">  
+      
+
+        <div class="col m3" ng-controller='repeatCtrl'>
           <a href="/cosmicblack"><div class="card">
             <div class="card-image small">
                 <img src="http://marble.com/uploads/materials/499/300X300/thumbnail/Cosmic-Black_APeruB9I056YsF3mZ0sT.jpg">
-                <span class="card-title">Cosmic Black</span>
+                <span class="card-title">{{materials.name}}</span>
               </div>
             </div>
           </a>
         </div>
-        <div class="col m3">
-          <a href="/"><div class="card">
-            <div class="card-image small">
-                <img src="http://marble.com/uploads/materials/694/300X300/thumbnail/Sucuri-White_xrE3GtgvlAnI6G6q4pmB.jpg">
-                <span class="card-title">Sucuri White</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col m3">
-          <a href="/"><div class="card">
-            <div class="card-image small">
-                <img src="http://marble.com/uploads/materials/917/300X300/thumbnail/Labradorite-Green_oU9fNhvGaaTaGyZt7XSn.jpg">
-                <span class="card-title">Labradorite Green</span>
-              </div>
-            </div>
-          </a>
-        </div>
+
+        
       </div>
     </div>
 
 
-
-
-
-
+    
 
 
 
 
       <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script src="app.js"></script>
+          
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+      
+    
     </body>
   </html>
