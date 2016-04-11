@@ -17,17 +17,6 @@ app.get('/', (req, res) => {
 
 
 
-app.get('/cosmicblack', (req, res) => {
-	var cursor = db.collection('materials').find();
-	db.collection('materials').find({"id": "499"}).toArray(function(err, results) {
-		console.log(results);
-	});
-	db.collection('materialphotos').find({"material_id": "499"}).toArray(function(err, results2) {
-		console.log(results2);
-	});
-	res.redirect('/');
-});
-
 app.get('/granite', (req, res) => {
 	db.collection('materials').find({"material_category_id": "35"}).toArray(function(err, results) {
 		console.log(results);
@@ -35,6 +24,19 @@ app.get('/granite', (req, res) => {
 	res.redirect('/');
 });
 
+app.get('/marble', (req, res) => {
+	db.collection('materials').find({"material_category_id": "36"}).toArray(function(err, results) {
+		console.log(results);
+	});
+	res.redirect('/');
+});
+
+app.get('/quartzite', (req, res) => {
+	db.collection('materials').find({"material_category_id": "43"}).toArray(function(err, results) {
+		console.log(results);
+	});
+	res.redirect('/');
+});
 
 
 app.listen(3000, () => {
