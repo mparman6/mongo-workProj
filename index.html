@@ -8,7 +8,9 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="style.css"/>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
+      <script src="searchController.js"></script>
       <script src="script.js"></script>
+      <script src="repeatController.js"></script>
       <script src="app.js"></script>  
       
     </head>
@@ -27,14 +29,11 @@
         </div>
       </nav>
       
-      <div class="navbar-fixed">
+      <div class="navbar-fixed" ng-controller='SearchCtrl'>
         <nav>
           <div class="nav-wrapper" id="gray">
-            <a href="/" class="brand-logo">Marble.com</a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="/granite">Granite</a></li>
-              <li><a href="/marble">Marble</a></li>
-              <li><a href="/quartzite">Quartzite</a></li>
+            <ul class="hide-on-med-and-down" id="category-center">
+              <li ng-repeat="category in categories"><a href="{{category.route}}">{{category.name}}</a></li>
             </ul>
           </div>
         </nav>
@@ -43,15 +42,15 @@
 
 
 
-    <div class="container" ng-controller='repeatCtrl'>
+    <div class="container">
      <div class="row">  
       
 
-        <div class="col m3" >
+        <div class="col m3" ng-repeat="material in materials">
           <a href="/cosmicblack"><div class="card">
             <div class="card-image small">
                 <img src="http://marble.com/uploads/materials/499/300X300/thumbnail/Cosmic-Black_APeruB9I056YsF3mZ0sT.jpg">
-                <span class="card-title">{{materials.name}}</span>
+                <span class="card-title">{{ materials.name }}</span>
               </div>
             </div>
           </a>

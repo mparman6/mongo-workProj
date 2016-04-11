@@ -1,28 +1,18 @@
-var app = angular.module("marbleApp", []);
+var databaseSearch = function($http) {
 
-app.controller('repeatCtrl', function($scope) {
-	$scope.materials = 
-		{name: 'Cosmic Black'}
-	$scope.search = '';	
-});
-
-
-
-app.controller('searchController', function($scope, $http) {
-	$http.get('mongodb://localhost/test').
-	success(function(data) {
-		$scope.materials = data;
-	}).
-	error(function(data, status, headers, config) {
-		consol.log(status);
-	});
+	var getData = function(materialName) {
+		return $http.get("mongodb://localhost/test")
+			.then(function(response) {
+				return response.data;
+			});
+	};
+};
 
 
-	$scope.search = function (query){
-		db.collection('materials').find({"material_name": query}).toArray(function(err, results) {
-		console.log(results);
-		});
+var module = angular.module("marbleApp");
+module.factory("databaseSearch", databaseSearch);
 
-		res.redirect('/');
-	}
-});
+
+
+
+
