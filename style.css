@@ -6,3 +6,12 @@
 .nav-wrapper {
 	text-align: center;
 }
+
+.card-content {
+	margin: 0px;
+	padding: 0px;
+	background-color: #e6e6e6;
+	color: #000;
+	font-weight: bold;
+	text-align: center;
+}

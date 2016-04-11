@@ -31,12 +31,70 @@ app.get('/marble', (req, res) => {
 	res.redirect('/');
 });
 
+app.get('/quartz', (req, res) => {
+	db.collection('materials').find({"material_category_id": "38"}).toArray(function(err, results) {
+		console.log(results);
+	});
+	res.redirect('/');
+});
+
+
 app.get('/quartzite', (req, res) => {
 	db.collection('materials').find({"material_category_id": "43"}).toArray(function(err, results) {
 		console.log(results);
 	});
 	res.redirect('/');
 });
+
+app.get('/onyx', (req, res) => {
+	db.collection('materials').find({"material_category_id": "39"}).toArray(function(err, results) {
+		console.log(results);
+	});
+	res.redirect('/');
+});
+
+app.get('/travertine', (req, res) => {
+	db.collection('materials').find({"material_category_id": "40"}).toArray(function(err, results) {
+		console.log(results);
+	});
+	res.redirect('/');
+});
+
+app.get('/gemstone', (req, res) => {
+	db.collection('materials').find({"material_category_id": "41"}).toArray(function(err, results) {
+		console.log(results);
+	});
+	res.redirect('/');
+});
+
+app.get('/limestone', (req, res) => {
+	db.collection('materials').find({"material_category_id": "42"}).toArray(function(err, results) {
+		console.log(results);
+	});
+	res.redirect('/');
+});
+
+app.get('/soapstone', (req, res) => {
+	db.collection('materials').find({"material_category_id": "47"}).toArray(function(err, results) {
+		console.log(results);
+	});
+	res.redirect('/');
+});
+
+app.get('/slate', (req, res) => {
+	db.collection('materials').find({"material_category_id": "49"}).toArray(function(err, results) {
+		console.log(results);
+	});
+	res.redirect('/');
+});
+
+app.get('/glass', (req, res) => {
+	db.collection('materials').find({"material_category_id": "45"}).toArray(function(err, results) {
+		console.log(results);
+	});
+	res.redirect('/');
+});
+
 
 
 app.listen(3000, () => {
